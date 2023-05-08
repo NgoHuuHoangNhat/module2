@@ -2,7 +2,7 @@ package ss1.bai_tap;
 
 import java.util.Scanner;
 
-public class ChuyenDoiTienTe {
+public class CurrencyConversion {
     public static void main(String[] args) {
         float vnd, usd, rate;
 
