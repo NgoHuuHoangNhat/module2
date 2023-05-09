@@ -5,21 +5,19 @@ import java.util.Scanner;
 public class NumbersIntoWords {
 
     public static void main(String[] args) {
-        int num, ones, tens, hundreds;
 
-        String strOnes, strTens, strHundreds;
-        strOnes = "";
-        strTens = "";
-        strHundreds = "";
+        String strOnes = "";
+        String strTens = "";
+        String strHundreds = "";
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Nhập 1 số tự nhiên bé hơn 1000");
-        num = scanner.nextInt();
+        int num = scanner.nextInt();
 
-        ones = num % 10;
-        tens = num / 10 % 10;
-        hundreds = num / 100 % 10;
+        int ones = num % 10;
+        int tens = num / 10 % 10;
+        int hundreds = num / 100 % 10;
 
         switch (ones) {
             case 0:
@@ -57,28 +55,30 @@ public class NumbersIntoWords {
 
         switch (tens) {
             case 1:
-                if(ones == 0) {
-                    strTens = "ten";
-                    break;
-                }else if (ones == 1) {
-                    strTens = "eleven";
-                    break;
-                } else if (ones == 2) {
-                    strTens = "twelve";
-                    break;
-                } else if (ones == 3) {
-                    strTens = "thirteen";
-                    break;
-                } else if (ones == 5) {
-                    strTens = "fifteen";
-                    break;
-                } else if (ones == 8) {
-                    strTens = "eighteen";
-                    break;
-                } else {
-                    strTens = strOnes + "teen";
-                    break;
+                switch (ones) {
+                    case 0:
+                        strTens = "ten";
+                        break;
+                    case 1:
+                        strTens = "eleven";
+                        break;
+                    case 2:
+                        strTens = "twelve";
+                        break;
+                    case 3:
+                        strTens = "thirteen";
+                        break;
+                    case 5:
+                        strTens = "fifteen";
+                        break;
+                    case 8:
+                        strTens = "eighteen";
+                        break;
+                    default:
+                        strTens = strOnes + "teen";
+                        break;
                 }
+                break;
             case 2:
                 strTens = "twen";
                 break;
