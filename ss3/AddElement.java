@@ -12,26 +12,35 @@ public class AddElement {
         System.out.println(Arrays.toString(arrNum));
     }
 
+
     public static void addElement(int[] arrNum) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("nhập 1 số");
-        int num = Integer.parseInt(scanner.nextLine());
+        System.out.print("nhập số lượng số cần thêm vào mảng (là số nguyên dương bé hơn hoặc bằng 5): ");
+        int count = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("nhập vị trí");
-        int index = Integer.parseInt(scanner.nextLine());
-        int count = 0;
-        for (int i = 0; i < arrNum.length; i++) {
-            if (i == index) {
-                count = i;
-                break;
+        if (count > 0 && count <= 5) {
+            for (int i = 0; i < count; i++) {
+
+                System.out.print("nhập số: ");
+                int num = Integer.parseInt(scanner.nextLine());
+
+                System.out.print("nhập vị trí: ");
+                int index = Integer.parseInt(scanner.nextLine());
+
+                for (int j = 0; j < arrNum.length; j++) {
+                    if (j == index) {
+                        for (int e = arrNum.length - 1; e > j; e--) {
+                            arrNum[e] = arrNum[e - 1];
+                        }
+                        arrNum[index] = num;
+                    }
+                }
             }
+        } else {
+            System.out.println("nhập sai");
         }
 
-        for (int i = arrNum.length - 1; i > count; i--) {
-            arrNum[i] = arrNum[i - 1];
-        }
-        arrNum[count] = num;
     }
 
     public static int[] createArr() {
@@ -46,8 +55,6 @@ public class AddElement {
             if (i < length) {
                 System.out.print("nhập số nguyên thứ " + i + " vào mảng: ");
                 arrNum[i] = Integer.parseInt(scanner.nextLine());
-            } else {
-                arrNum[i] = 0;
             }
         }
         return arrNum;
