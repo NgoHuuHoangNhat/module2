@@ -4,17 +4,16 @@ import java.util.Scanner;
 
 public class DisplayPrime {
     public static void main(String[] args) {
-        int size, num, i;
-        num = 2;
-        i = 0;
+        int num = 2;
+        int i = 0;
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("nhập số lượng số nguyên tố");
-        size = scanner.nextInt();
-
+        int size = scanner.nextInt();
+        boolean flag;
         while (i < size) {
-            boolean flag = true;
+            flag = true;
             for (int j = 2; j < num; j++) {
                 if (num % j == 0) {
                     flag = false;

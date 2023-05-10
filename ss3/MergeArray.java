@@ -27,8 +27,12 @@ public class MergeArray {
             arrSecond[i] = Integer.parseInt(scanner.nextLine());
         }
 
+        int[] arrThird = mergeArr(arrFirst,arrSecond);
+        System.out.println(Arrays.toString(arrThird));
+    }
 
-        int[] arrThird = new int[numFirst + numSecond];
+    public static int[] mergeArr(int[] arrFirst, int[] arrSecond) {
+        int[] arrThird = new int[arrFirst.length + arrSecond.length];
 
         for (int i = 0; i < arrThird.length; i++) {
             if (i < arrFirst.length) {
@@ -37,7 +41,7 @@ public class MergeArray {
                 arrThird[i] = arrSecond[i - arrFirst.length];
             }
         }
-
-        System.out.println(Arrays.toString(arrThird));
+        return arrThird;
     }
+
 }

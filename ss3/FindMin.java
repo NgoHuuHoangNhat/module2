@@ -14,6 +14,14 @@ public class FindMin {
 
         double[][] arrFloat = new double[arrLength][elementLength];
 
+        addArr(arrFloat);
+
+        System.out.println("số nhỏ nhất trong mảng 2 chiều là " + findMin(arrFloat));
+    }
+
+    public static void addArr(double[][] arrFloat) {
+        Scanner scanner = new Scanner(System.in);
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print("nhập phần tử thứ " + (j + 1) + " trong mảng " + (i + 1) + ": ");
@@ -23,14 +31,17 @@ public class FindMin {
 
         String str = "";
 
-        for (int i = 0; i < arrLength; i++) {
-            for (int j = 0; j < elementLength; j++) {
+        for (int i = 0; i < arrFloat.length; i++) {
+            for (int j = 0; j < arrFloat[i].length; j++) {
                 str += arrFloat[i][j] + ", ";
             }
         }
 
         System.out.println("mảng vừa nhập là: " + str);
 
+    }
+
+    public static double findMin(double[][] arrFloat) {
         double min = arrFloat[0][0];
 
         for (int i = 0; i < arrFloat.length; i++) {
@@ -38,9 +49,8 @@ public class FindMin {
                 if (min > arrFloat[i][j]) {
                     min = arrFloat[i][j];
                 }
-
             }
         }
-        System.out.println("số nhỏ nhất trong mảng 2 chiều là " + min);
+        return min;
     }
 }

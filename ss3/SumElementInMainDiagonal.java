@@ -18,27 +18,33 @@ public class SumElementInMainDiagonal {
             }
         }
 
+        displayArrFloat(arrFloat);
 
-        for (int i = 0; i < arrLength; i++) {
+        double sum = calculatorSum(arrFloat);
+        System.out.println("Tổng của đường chéo chính là: " + sum);
+
+    }
+
+    public static void displayArrFloat(double[][] arrFloat) {
+        for (int i = 0; i < arrFloat.length; i++) {
             String str = "";
-            for (int j = 0; j < arrLength; j++) {
+            for (int j = 0; j < arrFloat.length; j++) {
                 str += arrFloat[i][j] + ", ";
             }
             System.out.println("dòng " + i + " là: " + str);
         }
+    }
 
+    public static double calculatorSum(double[][] arrFloat) {
         double sum = 0;
 
-        for (int i = 0; i < arrLength; i++) {
-            for (int j = 0; j < arrLength; j++) {
-                if (i == j || j == arrLength - i - 1) {
+        for (int i = 0; i < arrFloat.length; i++) {
+            for (int j = 0; j < arrFloat.length; j++) {
+                if (i == j || j == arrFloat.length - i - 1) {
                     sum += arrFloat[i][j];
                 }
             }
         }
-
-
-        System.out.println("Tổng của đường chéo chính là: " + sum);
-
+        return sum;
     }
 }
