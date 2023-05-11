@@ -2,28 +2,31 @@ package ss4.bai_tap.lop_can_bac_2;
 
 public class QuadraticEquation {
 
-    private double a, b, c;
+    private double numA;
+    private double numB;
+    private double numC;
 
     public QuadraticEquation(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+        this.numA = a;
+        this.numB = b;
+        this.numC = c;
     }
 
     public double getDelta() {
-        return this.b * this.b - 4 * this.a * this.c;
+        return this.numB * this.numB - 4 * this.numA * this.numC;
     }
 
-    public double getDoubleSolution(){
-        return -this.b/(2*this.a);
+    public double getDoubleSolution() {
+        return -this.numB / (2 * this.numA);
     }
+
     public double getRoot1() {
-        double result = (-this.b + Math.sqrt((this.b * this.b - 4 * this.a * this.c))) / (2 * this.a);
+        double result = (-this.numB + Math.sqrt((this.numB * this.numB - 4 * this.numA * this.numC))) / (2 * this.numA);
         return result;
     }
 
     public double getRoot2() {
-        double result = (-this.b - Math.sqrt((this.b * this.b - 4 * this.a * this.c))) / (2 * this.a);
+        double result = (-this.numB - Math.sqrt((this.numB * this.numB - 4 * this.numA * this.numC))) / (2 * this.numA);
         return result;
     }
 

@@ -1,8 +1,5 @@
 package ss4.bai_tap.lop_stop_watch;
 
-import ss4.bai_tap.lop_fan.Fan;
-
-import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
