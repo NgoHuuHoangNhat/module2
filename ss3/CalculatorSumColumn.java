@@ -41,11 +41,7 @@ public class CalculatorSumColumn {
     public static double calculatorSum(double[][] arrFloat, int colum) {
         double sum = 0;
         for (int i = 0; i < arrFloat.length; i++) {
-            for (int j = 0; j < arrFloat.length; j++) {
-                if (colum == j) {
-                    sum += arrFloat[i][j];
-                }
-            }
+            sum += arrFloat[i][colum];
         }
         return sum;
     }

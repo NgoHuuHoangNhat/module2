@@ -39,11 +39,7 @@ public class SumElementInMainDiagonal {
         double sum = 0;
 
         for (int i = 0; i < arrFloat.length; i++) {
-            for (int j = 0; j < arrFloat.length; j++) {
-                if (i == j || j == arrFloat.length - i - 1) {
-                    sum += arrFloat[i][j];
-                }
-            }
+            sum += arrFloat[i][i];
         }
         return sum;
     }
