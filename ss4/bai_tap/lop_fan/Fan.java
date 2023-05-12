@@ -14,6 +14,10 @@ public class Fan {
 
     private String color = "blue";
 
+    public Fan() {
+        
+    }
+
     public Fan(double radius, String color) {
         this.radius = radius;
         this.color = color;
