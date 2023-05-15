@@ -6,12 +6,13 @@ public class Circle extends Shape {
     Circle() {
 
     }
-    Circle(double radius){
+
+    Circle(double radius) {
         this.radius = radius;
     }
 
     Circle(String color, double radius, Boolean filled) {
-        super(color,filled);
+        super(color, filled);
         this.radius = radius;
     }
 
@@ -31,7 +32,11 @@ public class Circle extends Shape {
         return 2 * radius * 3.14;
     }
 
-    public String getInfor(){
-        return "A Circle with radius = "+getRadius()+", which is a subclass off " + super.toStr();
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", " + super.toString() +
+                '}';
     }
 }

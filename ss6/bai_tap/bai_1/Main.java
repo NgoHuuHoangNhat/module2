@@ -16,5 +16,11 @@ public class Main {
         System.out.println(cyclinder);
 
 
+        System.out.println(circle.toString());
+
+        circle = cyclinder;
+
+
+        System.out.println(circle);
     }
 }

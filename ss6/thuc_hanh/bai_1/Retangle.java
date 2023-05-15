@@ -35,8 +35,12 @@ public class Retangle extends Shape {
         return (getWidth() + getLength()) * 2;
     }
 
-    public String getInfor() {
-        return "A Retangle with width = " + getWidth() + " and height = " + getLength() + ", which is a subclass off " + super.toStr();
+    @Override
+    public String toString() {
+        return "Retangle{" +
+                "width=" + width +
+                ", length=" + length +
+                ", " + super.toString() +
+                '}';
     }
-
 }

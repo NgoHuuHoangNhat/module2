@@ -3,6 +3,10 @@ package ss6.bai_tap.bai_1;
 public class Cyclinder extends Circle {
     private double height;
 
+    Cyclinder() {
+
+    }
+
     Cyclinder(double radius, double height, String color) {
         super(radius, color);
         this.height = height;

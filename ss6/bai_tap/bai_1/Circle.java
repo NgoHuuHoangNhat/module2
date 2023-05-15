@@ -30,7 +30,7 @@ public class Circle {
     }
 
     public double calculatorArea() {
-        return this.radius*this.radius * Math.PI;
+        return this.radius * this.radius * Math.PI;
     }
 
     @Override

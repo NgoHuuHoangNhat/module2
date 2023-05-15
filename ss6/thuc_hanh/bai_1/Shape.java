@@ -2,33 +2,35 @@ package ss6.thuc_hanh.bai_1;
 
 public class Shape {
     private String color = "green";
-    private Boolean filled = true;
+    private boolean filled = true;
 
-    Shape(){
+    protected Shape() {
 
     }
-    Shape(String color, Boolean filled){
+
+    protected Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
 
-    public String getColor(){
+    public String getColor() {
         return this.color;
     }
-    public Boolean getFilled(){
+
+    public Boolean getFilled() {
         return this.filled;
     }
 
-    public void setColor(String color){
+    public void setColor(String color) {
         this.color = color;
     }
 
-    public void setFilled(Boolean filled){
+    public void setFilled(Boolean filled) {
         this.filled = filled;
     }
 
-
-    public String toStr() {
+    @Override
+    public String toString() {
         return "The Shape with color off " + getColor() + " and " + (getFilled() ? "filled" : "not-filled");
     }
 

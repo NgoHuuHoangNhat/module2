@@ -1,22 +1,22 @@
 package ss4.thuc_hanh;
 
-public class Rectangle {
+public final class Rectangle {
     double width, height;
 
-    public Rectangle(double width, double height) {
+    Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
-    public String getIfo() {
+    String getIfo() {
         return "chiều rộng là: " + this.width + ", chiều dài là: " + this.height;
     }
 
-    public double getRetangleArea() {
+    double getRetangleArea() {
         return this.height * this.width;
     }
 
-    public double getRetanglePerimeter() {
+    double getRetanglePerimeter() {
         return (this.height + this.width) * 2;
     }
 }

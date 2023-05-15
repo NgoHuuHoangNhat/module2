@@ -2,17 +2,44 @@ package ss6.demo;
 
 public class Main {
     public static void main(String[] args) {
-        Animal sam = new Animal();
-        Dog milu = new Dog();
-
-        Animal cung = new Dog();
-        milu = (Dog)cung ;
-
-        System.out.println(((Dog)cung).giongLoai);
+        Animal animal = new Dog ();
 
 
-        float a = 5;
+//        Dog dog = new Dog();
 
-        System.out.println((int) a/3);
+
+         ((Dog)animal).vayDuoi();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       Animal animal2 = new Dog();
+//
+//        Animal dog2 =  new Dog();
+//
+//        animal1 = (Dog) dog1;
+
+//        if (dog instanceof Dog) {
+//            animal.drink();
+//        }
+
+//        if (dog2 instanceof Dog) {
+//           // ((Dog) dog2).drink();
+//            System.out.println(((Dog) dog2).sua());
+//            //((Dog) dog2).vayDuoi();
+//        }
+
     }
 }

@@ -3,8 +3,8 @@ package ss6.bai_tap.bai_3;
 import java.util.Arrays;
 
 public class Point {
-    float x;
-    float y;
+    private float x;
+    private float y;
 
     Point() {
 
