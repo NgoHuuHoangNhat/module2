@@ -17,7 +17,7 @@ public class Circle {
     }
 
     public double getArea() {
-        return this.radius * 3.14;
+        return this.radius*this.radius * 3.14;
     }
 
 
