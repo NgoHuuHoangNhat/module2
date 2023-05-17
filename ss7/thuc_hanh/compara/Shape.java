@@ -1,32 +1,18 @@
-package ss7.bai_tap.bai_1;
+package ss7.thuc_hanh.comparable;
 
 public class Shape {
-    /**
-     * @creactor: Nhat
-     * @param: class Shape đc tạo ra để khai báo thuộc tính collor và filled, là lớp cha của các lớp Circle, Retangle, Square
-     * @param color: thuộc tính màu sắc
-     * @param filled: thuộc tính filled
-     */
     private String color;
     private boolean filled;
-
-    /**
-     * @param các contructor
-     */
-    Shape() {
+    protected Shape() {
         this.color = "green";
         this.filled = true;
     }
 
-    Shape(String color, boolean filled) {
+    protected Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
 
-    /**
-     * getter và setter
-     * @return
-     */
     public String getColor() {
         return this.color;
     }
@@ -43,10 +29,7 @@ public class Shape {
         this.filled = filled;
     }
 
-    /**
-     * phương thức toString
-     * @return
-     */
+
 
     @Override
     public String toString() {

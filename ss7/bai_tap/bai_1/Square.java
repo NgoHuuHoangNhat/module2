@@ -1,6 +1,6 @@
 package ss7.bai_tap.bai_1;
 
-public class Square extends Shape implements ResizeableInterface {
+public class Square extends Shape implements Resizeable {
     double width;
 
     Square(double width) {

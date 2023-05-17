@@ -1,6 +1,6 @@
 package ss7.bai_tap.bai_1;
 
-public class Retangle extends Shape implements ResizeableInterface {
+public class Retangle extends Shape implements Resizeable {
     double width;
     double height;
 
