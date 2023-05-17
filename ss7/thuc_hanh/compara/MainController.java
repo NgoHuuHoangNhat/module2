@@ -1,4 +1,4 @@
-package ss7.thuc_hanh.comparable;
+package ss7.thuc_hanh.compara;
 
 import java.util.Arrays;
 

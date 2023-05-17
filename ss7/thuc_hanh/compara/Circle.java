@@ -1,4 +1,4 @@
-package ss7.thuc_hanh.comparable;
+package ss7.thuc_hanh.compara;
 
 
 public class Circle extends Shape implements Comparable<Circle> {
