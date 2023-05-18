@@ -1,4 +1,6 @@
-package ss8;
+package ss8.bai_tap;
+
+import ss8.bai_tap.TennisGame;
 
 import java.util.Scanner;
 

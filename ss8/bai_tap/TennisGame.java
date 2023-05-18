@@ -1,4 +1,4 @@
-package ss8;
+package ss8.bai_tap;
 
 
 public class TennisGame {
