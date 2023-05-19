@@ -1,8 +1,5 @@
 package ss9.bai_tap.my_list;
-
-
 import java.util.Arrays;
-import java.util.Objects;
 
 public class MyList<E> {
     private int size = 0;
