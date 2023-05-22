@@ -5,11 +5,11 @@ import java.util.Objects;
 public class Product {
     private String id;
     private String name;
-    private int price;
+    private float price;
     private int quantity;
     private String details;
 
-    public Product(String id, String name, int price, int quantity, String details) {
+    public Product(String id, String name, float price, int quantity, String details) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -33,11 +33,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

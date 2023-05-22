@@ -15,7 +15,7 @@ public interface IProductRepository {
 
     Product getByName(String name);
 
-    void setProduct(Product product, String newName, int newPrice, int newQuantity, String newDetails);
+    void setProduct(Product product, String newName, float newPrice, int newQuantity, String newDetails);
 
     void sortUp();
 

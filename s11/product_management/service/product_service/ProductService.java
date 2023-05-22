@@ -35,7 +35,7 @@ public class ProductService implements IProductService {
             String name = scanner.nextLine();
 
             System.out.print("Nhập giá sản phẩm: ");
-            int price = Integer.parseInt(scanner.nextLine());
+            float price = Float.parseFloat(scanner.nextLine());
 
             System.out.print("Nhập số lượng sản phẩm: ");
             int quantity = Integer.parseInt(scanner.nextLine());
@@ -110,7 +110,7 @@ public class ProductService implements IProductService {
                 String newName = scanner.nextLine();
 
                 System.out.print("Nhập giá mới cho sản phẩm:  ");
-                int newPrice = Integer.parseInt(scanner.nextLine());
+                float newPrice = Float.parseFloat(scanner.nextLine());
 
                 System.out.println("Nhập số lượng mới cho sản phẩm: ");
                 int newQuantity = Integer.parseInt(scanner.nextLine());

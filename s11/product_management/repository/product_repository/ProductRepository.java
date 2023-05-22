@@ -2,7 +2,6 @@ package s11.product_management.repository.product_repository;
 
 import s11.product_management.model.product.Product;
 import s11.product_management.repository.IProductRepository;
-import ss10.bai_lam_them.quan_ly_sinh_vien.repositori.ICodegymRepository;
 
 import java.util.*;
 
@@ -43,7 +42,7 @@ public class ProductRepository implements IProductRepository {
     @Override
     public Product getByName(String name) {
         for (Product product : productList) {
-            if (product.getName().equals(name)) {
+            if (product.getName().toLowerCase().contains(name.toLowerCase())) {
                 return product;
             }
 
@@ -52,7 +51,7 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void setProduct(Product product, String newName, int newPrice, int newQuantity, String newDetails) {
+    public void setProduct(Product product, String newName, float newPrice, int newQuantity, String newDetails) {
         for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i).equals(product)) {
                 productList.get(i).setName(newName);
@@ -68,7 +67,11 @@ public class ProductRepository implements IProductRepository {
         productList.sort(new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                return o1.getPrice() - o2.getPrice();
+                if (o1.getPrice() > o2.getPrice()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             }
         });
     }
@@ -78,7 +81,11 @@ public class ProductRepository implements IProductRepository {
         productList.sort(new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                return o2.getPrice() - o1.getPrice();
+                if (o1.getPrice() < o2.getPrice()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             }
         });
     }
