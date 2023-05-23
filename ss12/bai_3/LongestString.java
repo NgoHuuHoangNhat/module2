@@ -13,9 +13,6 @@ public class LongestString {
             list.clear();
             list.add(str.charAt(i));
             for (int j = i + 1; j < str.length(); j++) {
-                if (list.contains(str.charAt(j))) {
-                    break;
-                }
                 if (list.getLast() < str.charAt(j)) {
                     list.add(str.charAt(j));
                 } else {
