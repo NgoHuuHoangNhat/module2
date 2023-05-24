@@ -12,7 +12,7 @@ public class ProductRepository implements IProductRepository {
         productList.add(new Product("P-001", "Oreo", 15000, 100, "Bánh oreo rất ngon"));
         productList.add(new Product("P-002", "Chocopice", 50000, 50, "Bánh chocopice rất ngon"));
         productList.add(new Product("P-003", "Bông lan", 4000, 70, "Bánh bông lan rất ngon"));
-        productList.add(new Product("P-003", "Bông lan 2", 4000, 70, "Bánh bông lan rất ngon"));
+        productList.add(new Product("P-004", "Bông lan 2", 4000, 70, "Bánh bông lan rất ngon"));
     }
 
     @Override
