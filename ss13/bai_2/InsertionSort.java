@@ -1,5 +1,8 @@
 package ss13.bai_2;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 public class InsertionSort {
     public int[] insertionSort(int[] list) {
         /**
@@ -29,5 +32,6 @@ public class InsertionSort {
             list[pos] = element;// thực hiện gán giá trị của element cho phần tử thích hợp
         }
         return list;// trả về mảng mới đã được sắp xếp
+
     }
 }

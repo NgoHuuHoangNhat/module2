@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentService implements ICodegymService {
-    Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
     private static ICodegymRepository studentRepository = new StudentRepository();
-    boolean flag;
+    private boolean flag;
 
     @Override
     public void add() {
@@ -31,28 +31,39 @@ public class StudentService implements ICodegymService {
 
             System.out.print("Nhập tên học viên: ");
             String newName = scanner.nextLine();
-
-            System.out.print("Nhập giới tính học viên\n" +
-                    "1. Nam\n" +
-                    "2. Nữ");
-            int chose = Integer.parseInt(scanner.nextLine());
             boolean gender = false;
-            if (chose == 1) {
-                gender = true;
-            } else if (chose == 2) {
-                gender = false;
-            }
+            while (true) {
+                System.out.print("Nhập giới tính học viên\n" +
+                        "1. Nam\n" +
+                        "Khác 1. Nữ");
+                try {
+                    int chose = Integer.parseInt(scanner.nextLine());
 
+                    if (chose == 1) {
+                        gender = true;
+                    }
+                    break;
+                } catch (NumberFormatException numberFormatException) {
+                    System.out.println("Nhập sai");
+                }
+            }
             System.out.print("Nhập lớp: ");
             String newClasses = scanner.nextLine();
-
-            System.out.println("Nhập điểm: ");
-            float score = Float.parseFloat(scanner.nextLine());
-
+            float score;
+            while (true) {
+                System.out.println("Nhập điểm: ");
+                try {
+                    score = Float.parseFloat(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException numberFormatException) {
+                    System.out.println("Nhập sai!!!");
+                }
+            }
             CodegymStudent newStudent = new CodegymStudent(newId, newName, gender, newClasses, score);
             studentRepository.add(newStudent);
+            System.out.println("Thêm học viên thành công!!!");
         } else {
-            System.out.println("Mã id này đã được đăng kí!");
+            System.out.println("Mã id này đã được đăng kí!!!");
         }
     }
 
@@ -77,7 +88,7 @@ public class StudentService implements ICodegymService {
 
             System.out.println("Bạn có muốn xoá học viên " + student.getName() + " có id là: " + checkId);
             System.out.println("1. Yes\n" +
-                               "2. No");
+                    "Khác. No");
             int chose = Integer.parseInt(scanner.nextLine());
 
             if (chose == 1) {

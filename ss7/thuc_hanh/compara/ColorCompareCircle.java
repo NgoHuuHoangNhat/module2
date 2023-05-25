@@ -5,6 +5,6 @@ import java.util.Comparator;
 public class ColorCompareCircle implements Comparator<Circle> {
     @Override
     public int compare(Circle o1, Circle o2) {
-        return 0;
+        return 1;
     }
 }

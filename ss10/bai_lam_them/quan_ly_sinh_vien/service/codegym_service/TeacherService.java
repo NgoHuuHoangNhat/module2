@@ -30,15 +30,22 @@ public class TeacherService implements ICodegymService {
         if (!flag) {
             System.out.print("Nhập tên giảng viên: ");
             String newName = scanner.nextLine();
-            System.out.print("Chọn giới tính\n" +
-                    "1. Nam\n" +
-                    "2. Nữ");
-            int chose = Integer.parseInt(scanner.nextLine());
-            boolean gender;
-            if (chose == 1) {
-                gender = true;
-            } else {
-                gender = false;
+            boolean gender = false;
+            while (true) {
+                System.out.print("Chọn giới tính\n" +
+                        "1. Nam\n" +
+                        "Khác 1. Nữ");
+
+                try {
+                    int chose = Integer.parseInt(scanner.nextLine());
+
+                    if (chose == 1) {
+                        gender = true;
+                    }
+                    break;
+                } catch (NumberFormatException numberFormatException) {
+                    System.out.println("Nhập sai!!!!!");
+                }
             }
             System.out.print("Nhập bộ môn: ");
             String specializing = scanner.nextLine();
@@ -55,6 +62,7 @@ public class TeacherService implements ICodegymService {
             System.out.println(teacher);
         }
     }
+
     @Override
     public void remove() {
         System.out.print("Nhập mã giảng viên cần xoá: ");
@@ -68,7 +76,7 @@ public class TeacherService implements ICodegymService {
 
             System.out.println("Bạn có muốn xoá giảng viên " + teacher.getName() + " có id là: " + checkId);
             System.out.println("1. Yes\n" +
-                    "2. No");
+                    "Khác 1. No");
             int chose = Integer.parseInt(scanner.nextLine());
 
             if (chose == 1) {

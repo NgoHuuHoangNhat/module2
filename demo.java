@@ -1,18 +1,16 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class demo {
     public static void main(String[] args) {
-        int[] arr = {-3,3,5,7,1,4,2,1};
+        int x = 121;
 
-        int max = arr[0];
-        for(int i = 0; i < arr.length - 1; i++){
-            if(max < arr[i + 1]){
-                max = arr[i + 1];
+        String num = Integer.toString(x);
+
+        for (int i = 0; i < num.length(); i++) {
+            if(num.charAt(i) != num.charAt(num.length()-i-1)){
+                System.out.println(false);
             }
         }
-
-
-        System.out.println(max);;
-
+        System.out.println(true);
     }
 }
