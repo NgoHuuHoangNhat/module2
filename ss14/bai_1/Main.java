@@ -5,16 +5,41 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int firstEdge;
+        int secondEdge;
+        int thirdEdge;
+        while (true) {
+            System.out.print("Nhập độ dài cạnh thứ 1: ");
+            try {
+                firstEdge = Integer.parseInt(scanner.nextLine());
+                checkEdge(firstEdge);
+                break;
+            } catch (IllegalTriangleException illegalTriangleException) {
+                System.out.println(illegalTriangleException.getMessage());
+            }
+        }
 
-        System.out.print("Nhập độ dài cạnh thứ 1: ");
-        int firstEdge = Integer.parseInt(scanner.nextLine());
+        while (true) {
+            System.out.print("Nhập độ dài cạnh thứ 2: ");
+            try {
+                secondEdge = Integer.parseInt(scanner.nextLine());
+                checkEdge(secondEdge);
+                break;
+            } catch (IllegalTriangleException illegalTriangleException) {
+                System.out.println(illegalTriangleException.getMessage());
+            }
+        }
 
-        System.out.print("Nhập độ dài cạnh thứ 2: ");
-        int secondEdge = Integer.parseInt(scanner.nextLine());
-
-        System.out.print("Nhập độ dài cạnh thứ 3: ");
-        int thirdEdge = Integer.parseInt(scanner.nextLine());
-
+        while (true) {
+            System.out.print("Nhập độ dài cạnh thứ 3: ");
+            try {
+                thirdEdge = Integer.parseInt(scanner.nextLine());
+                checkEdge(thirdEdge);
+                break;
+            } catch (IllegalTriangleException illegalTriangleException) {
+                System.out.println(illegalTriangleException.getMessage());
+            }
+        }
         try {
             checkTriangle(firstEdge, secondEdge, thirdEdge);
             System.out.println("3 cạnh nhập vào là 3 cạnh của tam giác! ");
@@ -26,10 +51,15 @@ public class Main {
     }
 
     public static void checkTriangle(int firstEdge, int secondEdge, int thirdEdge) throws IllegalTriangleException {
-        if (firstEdge <= 0 || secondEdge <= 0 || thirdEdge <= 0 ||
-                firstEdge + secondEdge <= thirdEdge || firstEdge + thirdEdge <= secondEdge ||
+        if (firstEdge + secondEdge <= thirdEdge || firstEdge + thirdEdge <= secondEdge ||
                 secondEdge + thirdEdge <= firstEdge) {
             throw new IllegalTriangleException("Đây không phải 3 cạnh của 1 tam giác!");
+        }
+    }
+
+    public static void checkEdge(int edge) throws IllegalTriangleException {
+        if (edge <= 0) {
+            throw new IllegalTriangleException("Đây không phải là 1 cạnh của tam giác, Yêu cầu nhập lại!");
         }
     }
 
