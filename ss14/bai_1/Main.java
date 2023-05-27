@@ -14,6 +14,8 @@ public class Main {
                 firstEdge = Integer.parseInt(scanner.nextLine());
                 checkEdge(firstEdge);
                 break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Bạn đang nhập không phải là số, yêu cầu nhập lại!");
             } catch (IllegalTriangleException illegalTriangleException) {
                 System.out.println(illegalTriangleException.getMessage());
             }
@@ -25,6 +27,8 @@ public class Main {
                 secondEdge = Integer.parseInt(scanner.nextLine());
                 checkEdge(secondEdge);
                 break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Bạn đang nhập không phải là số, yêu cầu nhập lại!");
             } catch (IllegalTriangleException illegalTriangleException) {
                 System.out.println(illegalTriangleException.getMessage());
             }
@@ -36,13 +40,16 @@ public class Main {
                 thirdEdge = Integer.parseInt(scanner.nextLine());
                 checkEdge(thirdEdge);
                 break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Bạn đang nhập không phải là số, yêu cầu nhập lại!");
             } catch (IllegalTriangleException illegalTriangleException) {
                 System.out.println(illegalTriangleException.getMessage());
             }
         }
         try {
             checkTriangle(firstEdge, secondEdge, thirdEdge);
-            System.out.println("3 cạnh nhập vào là 3 cạnh của tam giác! ");
+            System.out.println("****************Kết quả****************");
+            System.out.println("3 cạnh nhập vào là 3 cạnh của tam giác!");
         } catch (IllegalTriangleException illegalTriangleException) {
             System.out.println(illegalTriangleException.getMessage());
         } finally {
