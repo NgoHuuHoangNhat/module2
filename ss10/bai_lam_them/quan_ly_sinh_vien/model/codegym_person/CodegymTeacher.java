@@ -24,4 +24,9 @@ public class CodegymTeacher extends CodegymPerson {
                 super.toString() +
                 ", dạy môn: " + specializing;
     }
+
+    @Override
+    public String getInfoToFileCSV() {
+        return super.getInfoToFileCSV() + "," + this.specializing;
+    }
 }

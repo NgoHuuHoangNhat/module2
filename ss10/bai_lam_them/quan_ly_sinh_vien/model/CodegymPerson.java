@@ -42,7 +42,7 @@ public abstract class CodegymPerson {
     public String toString() {
         return "id: " + id + '\'' +
                 ", tên: '" + name + '\'' +
-                ", giới tính: " + (gender? "Nam": "Nữ");
+                ", giới tính: " + (gender ? "Nam" : "Nữ");
     }
 
     @Override
@@ -56,5 +56,9 @@ public abstract class CodegymPerson {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+
+    public String getInfoToFileCSV() {
+        return this.id + "," + this.name + "," + (this.gender ? "Nam" : "Nữ");
     }
 }

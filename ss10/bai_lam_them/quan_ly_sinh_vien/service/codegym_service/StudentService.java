@@ -40,7 +40,8 @@ public class StudentService implements ICodegymService {
             while (true) {
                 System.out.print("Nhập giới tính học viên\n" +
                         "1. Nam\n" +
-                        "2. Nữ");
+                        "2. Nữ\n" +
+                        "Chọn: ");
                 try {
                     int chose = Integer.parseInt(scanner.nextLine());
                     if (chose == 1) {
@@ -99,13 +100,11 @@ public class StudentService implements ICodegymService {
 
     @Override
     public void remove() {
-        CodegymStudent student = null;
-        String checkId;
         while (true) {
             System.out.print("Nhập mã học viên cần xoá: ");
-            checkId = scanner.nextLine();
+            String checkId = scanner.nextLine();
             try {
-                student = (CodegymStudent) studentRepository.getById(checkId);
+                CodegymStudent student = (CodegymStudent) studentRepository.getById(checkId);
                 while (true) {
                     System.out.println("Bạn có muốn xoá học viên " + student.getName() + " có id là: " + checkId);
                     System.out.println("1. Yes\n" +
@@ -114,6 +113,7 @@ public class StudentService implements ICodegymService {
                         int chose = Integer.parseInt(scanner.nextLine());
                         if (chose == 1) {
                             studentRepository.remove(student);
+                            System.out.println("Đã xoá học viên có tên là: " + student.getName()+" với id: " + student.getId());
                             break;
                         } else if (chose == 2) {
                             MainController.menu();

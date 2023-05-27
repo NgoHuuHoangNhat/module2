@@ -1,7 +1,6 @@
 package ss10.bai_lam_them.quan_ly_sinh_vien.service.codegym_service;
 
 import ss10.bai_lam_them.quan_ly_sinh_vien.cotroller.MainController;
-import ss10.bai_lam_them.quan_ly_sinh_vien.model.codegym_person.CodegymStudent;
 import ss10.bai_lam_them.quan_ly_sinh_vien.model.codegym_person.CodegymTeacher;
 import ss10.bai_lam_them.quan_ly_sinh_vien.repositori.codegym_repository.TeacherRepository;
 import ss10.bai_lam_them.quan_ly_sinh_vien.service.ICodegymService;
@@ -46,6 +45,8 @@ public class TeacherService implements ICodegymService {
                         break;
                     } else if (chose != 2) {
                         System.out.println("Hạy lựa chọn 1 hoặc 2!");
+                    }else {
+                        break;
                     }
                 } catch (NumberFormatException numberFormatException) {
                     System.out.println("**************************************");

@@ -38,4 +38,9 @@ public class CodegymStudent extends CodegymPerson {
                 '}';
     }
 
+    @Override
+    public String getInfoToFileCSV() {
+        return super.getInfoToFileCSV() + "," + this.classes + "," + this.score;
+    }
+
 }
