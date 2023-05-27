@@ -19,7 +19,7 @@ public class MainController {
             System.out.println("*************************************");
             System.out.println("Chọn chức năng theo số (để tiếp tục)");
             System.out.print(
-                    "1. Thêm mới giảng viên hoặc học sinh\n" +
+                            "1. Thêm mới giảng viên hoặc học sinh\n" +
                             "2. Xoá giảng viên hoặc học sinh\n" +
                             "3. Xem danh sách giảng viên hoặc học sinh\n" +
                             "0. Thoát Chương Trình \n" +

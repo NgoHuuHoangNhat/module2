@@ -6,6 +6,7 @@ public class CodegymStudent extends CodegymPerson {
     private String classes;
     private float score;
 
+
     public CodegymStudent(String id, String name, boolean gender, String classes, float score) {
         super(id, name, gender);
         this.classes = classes;
