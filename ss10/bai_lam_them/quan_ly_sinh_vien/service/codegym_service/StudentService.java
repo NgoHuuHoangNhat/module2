@@ -28,7 +28,6 @@ public class StudentService implements ICodegymService {
         }
 
         if (!flag) {
-
             System.out.print("Nhập tên học viên: ");
             String newName = scanner.nextLine();
             boolean gender = false;
@@ -38,7 +37,6 @@ public class StudentService implements ICodegymService {
                         "Khác 1. Nữ");
                 try {
                     int chose = Integer.parseInt(scanner.nextLine());
-
                     if (chose == 1) {
                         gender = true;
                     }
