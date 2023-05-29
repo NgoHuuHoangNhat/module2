@@ -1,6 +1,7 @@
 package ss11.product_management.service.product_service;
 
 
+import ss11.product_management.controller.MainController;
 import ss11.product_management.model.product.Product;
 import ss11.product_management.repository.IProductRepository;
 import ss11.product_management.repository.product_repository.ProductRepository;
@@ -15,10 +16,19 @@ public class ProductService implements IProductService {
 
     @Override
     public void display() {
+
         List<Product> productList = (List<Product>) productRepository.getAll();
-        for (Product product : productList) {
-            System.out.println(product);
+        if (productList.size() > 0) {
+            for (Product product : productList) {
+                System.out.println(product);
+            }
+        }else {
+            System.out.println("*********************");
+            System.out.println("Danh sách đang trống!");
+            System.out.println("*********************");
+
         }
+
     }
 
     @Override
@@ -80,10 +90,10 @@ public class ProductService implements IProductService {
         String name = scanner.nextLine();
 
         List<Product> productList = productRepository.getByName(name);
-        if(productList == null){
+        if (productList == null) {
             System.out.println("Không có sản phẩm có tên: " + name);
-        }else {
-            for (Product product: productList) {
+        } else {
+            for (Product product : productList) {
                 System.out.println(product);
             }
         }

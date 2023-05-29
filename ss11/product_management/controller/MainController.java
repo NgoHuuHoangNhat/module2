@@ -20,9 +20,16 @@ public class MainController {
                     "6. Sắp xếp sản phẩm theo giá\n" +
                     "0. Thoát chương trình\n" +
                     "Chọn chức năng: ");
+            int choice = 0;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
 
-            int choice = Integer.parseInt(scanner.nextLine());
-
+            }catch (NumberFormatException numberFormatException){
+                System.out.println("**************************************");
+                System.out.println("Nhập sai định dạng, vui lòng nhập lại!");
+                System.out.println("**************************************");
+                menu();
+            }
             switch (choice) {
                 case 0:
                     System.exit(1);
@@ -44,6 +51,11 @@ public class MainController {
                 case 6:
                     productService.sortByPrice();
                     break;
+                default:
+                    System.out.println("******************************************");
+                    System.out.println("Không có chức năng này, vui lòng nhập lại!");
+                    System.out.println("******************************************");
+
             }
 
         }

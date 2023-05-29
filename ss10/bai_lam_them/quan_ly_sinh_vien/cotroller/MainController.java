@@ -14,27 +14,26 @@ public class MainController {
 
     public static void menu() {
 
-
         while (true) {
             System.out.println("*************************************");
             System.out.println("Chọn chức năng theo số (để tiếp tục)");
             System.out.print(
-                            "1. Thêm mới giảng viên hoặc học sinh\n" +
+                    "1. Thêm mới giảng viên hoặc học sinh\n" +
                             "2. Xoá giảng viên hoặc học sinh\n" +
                             "3. Xem danh sách giảng viên hoặc học sinh\n" +
                             "0. Thoát Chương Trình \n" +
                             "Chọn chức năng: ");
 
             int chose = 0;
-            while (true) {
-                try {
-                    chose = Integer.parseInt(scanner.nextLine());
-                    break;
-                } catch (NumberFormatException numberFormatException) {
-                    System.out.println("Nhập sai vui lòng nhập lại!");
-                    menu();
-                }
+
+            try {
+                chose = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Nhập sai vui lòng nhập lại!");
+                menu();
             }
+
             switch (chose) {
                 case 0:
                     System.exit(1);

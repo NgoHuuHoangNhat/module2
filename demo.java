@@ -1,33 +1,17 @@
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class demo {
     public static void main(String[] args) {
-        String[] strs = {"cardog", "carracecars", "carc"};
-//        String[] strs = {"flower", "flowaer", "flighter"};
+        int[] arr = {1,1,2};
+//        int[] arr = {0,0,1,1,1,2,2,3,3,4};
 
-        System.out.println(longestCommonPrefix(strs));
+        int result = removeDuplicates(arr);
 
+        System.out.println(result);
+        System.out.println(Arrays.toString(arr));
     }
+    public static int removeDuplicates(int[] nums) {
 
-    public static String longestCommonPrefix(String[] strs) {
-        Arrays.sort(strs);
-        String strFirst = strs[0];
-        String strLast = strs[strs.length - 1];
-        int index = 0;
-        String str = "";
-
-        while (index < strFirst.length() && index < strLast.length()) {
-            if(strFirst.charAt(index) == strLast.charAt(index)){
-                str+=strFirst.charAt(index);
-            }else {
-                break;
-            }
-           index++;
-        }
-        return str;
-
-
+        return 0;
     }
 }
