@@ -24,6 +24,7 @@ public class FuramaController {
             } catch (NumberFormatException numberFormatException) {
                 ChoiceException.choiceException();
                 displayMainMenu();
+                break;
             }
 
             switch (choice) {

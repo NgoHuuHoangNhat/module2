@@ -1,6 +1,7 @@
 package case_study.repository.impl;
 
-import case_study.repository.ICustomerIRepository;
+import case_study.repository.ICustomerRepository;
 
-public class CustomerRepository implements ICustomerIRepository {
+public class CustomerRepository implements ICustomerRepository {
+
 }
