@@ -28,8 +28,8 @@ public class BookingController {
                         break;
                     case 4://display list contracts
                         break;
-                    case 5:FuramaController.displayMainMenu();
-                        break ;
+                    case 5:
+                        return;
                     default:
                         ChoiceException.choiceIsNotAvailable();
                         break;

@@ -1,8 +1,8 @@
 package case_study.service.impl;
 
-import case_study.service.IContactService;
+import case_study.service.IContractService;
 
-public class ContactService implements IContactService {
+public class ContractService implements IContractService {
     @Override
     public void display() {
 
@@ -12,4 +12,5 @@ public class ContactService implements IContactService {
     public void create() {
 
     }
+
 }

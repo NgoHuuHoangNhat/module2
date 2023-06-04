@@ -4,9 +4,10 @@ import case_study.model.impl_person.impl.Employee;
 
 import java.util.List;
 
-public interface IEmployeeRepository extends IRepository {
-    public Employee getEmployeeById(String checkId);
-    public List<Employee> getAll();
+public interface IEmployeeRepository extends IRepository<Employee> {
+    void edit(Employee t,String obj);
 
-    void add(String newEmployee);
+    void remove(Employee obj);
+
+    List<Employee> getByName(String name);
 }

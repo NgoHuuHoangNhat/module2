@@ -8,7 +8,7 @@ import case_study.service.impl.EmployeeService;
 import java.util.Scanner;
 
 public class EmployeeController {
-    private static IService employeeService = new EmployeeService();
+    private static IEmployeeService employeeService = new EmployeeService();
 
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
@@ -20,7 +20,9 @@ public class EmployeeController {
                     "1. Display list employees\n" +
                     "2. Add new employee\n" +
                     "3. Edit employee\n" +
-                    "4. Return main menu\n" +
+                    "4. Delete employee\n" +
+                    "5. Search by name employee\n" +
+                    "6. Return main menu\n" +
                     "Option: ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -32,10 +34,16 @@ public class EmployeeController {
                         employeeService.create();
                         break;
                     case 3:
+                        employeeService.edit();
                         break;
                     case 4:
-                        FuramaController.displayMainMenu();
+                        employeeService.remove();
                         break;
+                    case 5:
+                        employeeService.search();
+                        break;
+                    case 6:
+                        return;
                     default:
                         ChoiceException.choiceIsNotAvailable();
                         break;

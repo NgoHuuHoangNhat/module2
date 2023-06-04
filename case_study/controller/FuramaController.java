@@ -21,32 +21,32 @@ public class FuramaController {
             int choice = 0;
             try {
                 choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        EmployeeController.menu();
+                        break;
+                    case 2:
+                        CustomerController.menu();
+                        break;
+                    case 3:
+                        FacilityController.menu();
+                        break;
+                    case 4:
+                        BookingController.menu();
+                        break;
+                    case 5:
+                        PromotionController.menu();
+                        break;
+                    case 6:
+                        System.exit(1);
+                    default:
+                        ChoiceException.choiceIsNotAvailable();
+                        break;
+                }
             } catch (NumberFormatException numberFormatException) {
                 ChoiceException.choiceException();
                 displayMainMenu();
-                break;
-            }
-
-            switch (choice) {
-                case 1:
-                    EmployeeController.menu();
-                    break;
-                case 2:
-                    CustomerController.menu();
-                    break;
-                case 3:
-                    FacilityController.menu();
-                    break;
-                case 4:
-                    BookingController.menu();
-                    break;
-                case 5:
-                    PromotionController.menu();
-                    break;
-                case 6:
-                    System.exit(1);
-                default:
-                    ChoiceException.choiceIsNotAvailable();
             }
         }
     }

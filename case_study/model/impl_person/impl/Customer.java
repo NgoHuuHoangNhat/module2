@@ -16,6 +16,22 @@ public class Customer extends Person {
         this.address = address;
     }
 
+    public String getTypeOfGuest() {
+        return typeOfGuest;
+    }
+
+    public void setTypeOfGuest(String typeOfGuest) {
+        this.typeOfGuest = typeOfGuest;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Customer{" + super.toString()+

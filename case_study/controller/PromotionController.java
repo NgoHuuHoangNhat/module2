@@ -24,8 +24,7 @@ public class PromotionController {
                     case 2:// display list customers get voucher
                         break;
                     case 3:
-                        FuramaController.displayMainMenu();
-                        break;
+                        return;
                     default:
                         ChoiceException.choiceIsNotAvailable();
                 }

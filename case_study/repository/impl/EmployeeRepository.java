@@ -41,8 +41,72 @@ public class EmployeeRepository implements IEmployeeRepository {
         FileData.writeToFile(stringList, EMPLOYEE_PATH, true);
     }
 
+    //    String id, String name, String dateOfBirth, String gender,
+//    String passport, String numberPhone, String email, String level,String position, long wage
     @Override
-    public Employee getEmployeeById(String checkId) {
+    public void edit(Employee employee, String employeeStr) {
+        List<String> stringList = new ArrayList<>();
+        employeeList.clear();
+        employeeList = getAll();
+        String[] arr = employeeStr.split(",");
+
+        for (Employee e : employeeList) {
+            if (e.equals(employee)) {
+                e.setName(arr[1]);
+                e.setDateOfBirth(arr[2]);
+                e.setGender(arr[3]);
+                e.setPassport(arr[4]);
+                e.setNumberPhone(arr[5]);
+                e.setEmail(arr[6]);
+                e.setLevel(arr[7]);
+                e.setPosition(arr[8]);
+                e.setWage(Long.parseLong(arr[9]));
+            }
+        }
+
+        for (Employee e : employeeList) {
+            stringList.add(e.getId() + "," + e.getName() + "," + e.getDateOfBirth() + "," + e.getGender() + "," + e.getPassport() +
+                    "," + e.getNumberPhone() + "," + e.getEmail() + "," + e.getLevel() + "," + e.getPosition() + "," + e.getWage());
+        }
+        FileData.writeToFile(stringList, EMPLOYEE_PATH, false);
+    }
+
+    @Override
+    public void remove(Employee employee) {
+        List<String> stringList = new ArrayList<>();
+        employeeList.clear();
+        employeeList = getAll();
+        for (Employee e : employeeList) {
+            if (e.equals(employee)) {
+                employeeList.remove(e);
+                break;
+            }
+        }
+        for (Employee e : employeeList) {
+            stringList.add(e.getId() + "," + e.getName() + "," + e.getDateOfBirth() + "," + e.getGender() + "," + e.getPassport() +
+                    "," + e.getNumberPhone() + "," + e.getEmail() + "," + e.getLevel() + "," + e.getPosition() + "," + e.getWage());
+        }
+        FileData.writeToFile(stringList, EMPLOYEE_PATH, false);
+
+    }
+
+    @Override
+    public List<Employee> getByName(String name) {
+        List<Employee> employees = new ArrayList<>();
+        employeeList = getAll();
+        for (Employee e : employeeList) {
+            if (e.getName().toLowerCase().contains(name.toLowerCase())) {
+                employees.add(e);
+            }
+        }
+        if (employees.size() != 0) {
+            return employees;
+        }
+        return null;
+    }
+
+    @Override
+    public Employee getById(String checkId) {
         employeeList = getAll();
 
         for (Employee employee : employeeList) {

@@ -1,4 +1,12 @@
 package case_study.service;
 
-public interface ICustomerService extends IService {
+import case_study.model.impl_person.impl.Customer;
+
+public interface ICustomerService extends IService<Customer> {
+    void edit();
+
+    void remove();
+
+    void search();
+    public String enterInfo(String checkID);
 }
