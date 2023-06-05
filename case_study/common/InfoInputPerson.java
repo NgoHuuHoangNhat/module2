@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Scanner;
 
-public class InfoInput {
+public class InfoInputPerson {
     private static Scanner scanner = new Scanner(System.in);
 
     public static boolean checkAgeOlderThanEighteen(String dateOfBirth) {
@@ -39,7 +39,7 @@ public class InfoInput {
             dateOFBirth = scanner.nextLine();
             if (!Regex.checkDateOfBirth(dateOFBirth)) {
                 System.out.println("date of birth is not in the correct format, please re-input! ");
-            } else if (!InfoInput.checkAgeOlderThanEighteen(dateOFBirth)) {
+            } else if (!InfoInputPerson.checkAgeOlderThanEighteen(dateOFBirth)) {
                 System.out.println("This age under 18, input again!");
             } else {
                 return dateOFBirth;
@@ -52,10 +52,14 @@ public class InfoInput {
         while (true) {
             System.out.print("Enter gender(male or female): ");
             gender = scanner.nextLine();
-            if (gender.toLowerCase().equals("male") || gender.toLowerCase().equals("female")) {
-                return gender;
+            if (!Regex.checkGender(gender)) {
+                System.out.println("Gender is wrong format, please re-input!");
             } else {
-                System.out.println("There is not this gender, please re-enter! ");
+                if (gender.equals("Male") || gender.equals("Female")) {
+                    return gender;
+                } else {
+                    System.out.println("There is not this gender, please re-enter! ");
+                }
             }
         }
     }
@@ -177,7 +181,8 @@ public class InfoInput {
             }
         }
     }
-    public static String enterPosition(){
+
+    public static String enterPosition() {
         String position = "";
         while (true) {
             System.out.print("Select employee position: \n" +
@@ -209,7 +214,8 @@ public class InfoInput {
             }
         }
     }
-    public static long enterWage(){
+
+    public static long enterWage() {
         long wage = 0L;
         while (true) {
             try {

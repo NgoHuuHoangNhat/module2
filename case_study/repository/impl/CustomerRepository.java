@@ -14,10 +14,15 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public Customer getById(String checkId) {
         customerList = getAll();
-        for (Customer customer : customerList) {
-            if (customer.getId().equals(checkId)) {
-                return customer;
+
+        try {
+            for (Customer customer : customerList) {
+                if (customer.getId().equals(checkId)) {
+                    return customer;
+                }
             }
+        } catch (NullPointerException nullPointerException) {
+
         }
         return null;
     }
@@ -28,9 +33,13 @@ public class CustomerRepository implements ICustomerRepository {
         customerList.clear();
 
         String[] info;
-        for (String str : stringList) {
-            info = str.split(",");
-            customerList.add(new Customer(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8]));
+        try {
+            for (String str : stringList) {
+                info = str.split(",");
+                customerList.add(new Customer(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], info[8]));
+            }
+        }catch (NullPointerException nullPointerException){
+
         }
         return customerList;
     }
@@ -72,12 +81,14 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public void remove(Customer customer) {
         customerList = getAll();
+
         for (Customer element : customerList) {
             if (element.equals(customer)) {
                 customerList.remove(customer);
                 break;
             }
         }
+
         List<String> stringList = new ArrayList<>();
         for (Customer e : customerList) {
             stringList.add(e.getId() + "," + e.getName() + "," + e.getDateOfBirth() + "," + e.getGender() + "," +

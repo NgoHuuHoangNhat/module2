@@ -32,9 +32,11 @@ public class FacilityController {
                     case 2:
                         facilityService.addFacility();
                         break;
-                    case 3://display list facility maintenance
+                    case 3:
+                        facilityService.displayMaintenance();
                         break;
-                    case 4://remove list
+                    case 4:
+                        facilityService.removeFacilityList();
                         break;
                     case 5:
                         return;

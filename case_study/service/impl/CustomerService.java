@@ -1,15 +1,12 @@
 package case_study.service.impl;
 
-import case_study.common.FileData;
-import case_study.common.InfoInput;
-import case_study.common.ChoiceException;
+import case_study.common.InfoInputPerson;
 import case_study.common.Regex;
 import case_study.model.impl_person.impl.Customer;
 import case_study.repository.ICustomerRepository;
 import case_study.repository.impl.CustomerRepository;
 import case_study.service.ICustomerService;
 
-import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
@@ -119,21 +116,21 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public String enterInfo(String checkID) {
-        String name = InfoInput.enterName();
+        String name = InfoInputPerson.enterName();
 
-        String dateOFBirth = InfoInput.enterDateOfBirth();
+        String dateOFBirth = InfoInputPerson.enterDateOfBirth();
 
-        String gender = InfoInput.enterGender();
+        String gender = InfoInputPerson.enterGender();
 
-        String passPort = InfoInput.enterPassPort();
+        String passPort = InfoInputPerson.enterPassPort();
 
-        String numberPhone = InfoInput.enterNumberPhone();
+        String numberPhone = InfoInputPerson.enterNumberPhone();
 
-        String email = InfoInput.enterEmail();
+        String email = InfoInputPerson.enterEmail();
 
-        String typeOfGuest = InfoInput.enterTypeOfGuest();
+        String typeOfGuest = InfoInputPerson.enterTypeOfGuest();
 
-        String address = InfoInput.enterAddress();
+        String address = InfoInputPerson.enterAddress();
 
         String customer = checkID + "," + name + "," + dateOFBirth + "," + gender + "," +
                 passPort + "," + numberPhone + "," + email + "," + typeOfGuest + "," + address;

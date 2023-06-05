@@ -13,6 +13,22 @@ public class House extends Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
+    public String getStandardHouse() {
+        return standardHouse;
+    }
+
+    public void setStandardHouse(String standardHouse) {
+        this.standardHouse = standardHouse;
+    }
+
+    public int getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
     @Override
     public String toString() {
         return "House{" + super.toString() +

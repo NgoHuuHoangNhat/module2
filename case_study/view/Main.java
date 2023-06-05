@@ -4,7 +4,7 @@ import case_study.controller.FuramaController;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("---Chào Mừng Bạn Đến Với Resort Furama---");
+        System.out.println("---Welcome To Furama---");
         FuramaController.displayMainMenu();
     }
 }

@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface IFacilityRepository {
+    Facility getById(String id);
+    List<Facility> getAll();
 
     List<Villa> getVillaList();
 
@@ -17,4 +19,24 @@ public interface IFacilityRepository {
     List<Room> getRooomList();
 
     Villa getVillaByCode(String code);
+
+    void addVilla(String villaStr);
+
+    House getHouseByCode(String houseCode);
+
+    void addHouse(String houseStr);
+
+    Room getRoomById(String roomId);
+
+    void addRoom(String roomStr);
+
+    void removeVilla(Villa villa);
+
+    void removeHouse(House house);
+
+    void removeRoom(Room room);
+
+    Map<Facility, Integer> getFacilityMap();
+
+    void valueAddOne(Facility facility);
 }

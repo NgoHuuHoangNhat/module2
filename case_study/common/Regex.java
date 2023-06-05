@@ -12,7 +12,10 @@ public class Regex {
     private static final String ID_VILLA = "^SVVL\\-\\d{4}$";
     private static final String ID_ROOM = "^SVRO\\-\\d{4}$";
     private static final String ID_HOUSE = "^SVHO\\-\\d{4}$";
+    private static final String ID_BOOKING = "^BK\\-\\d{4}$";
     private static final String SERVICE_NAME = "^[A-Z](.+|)$";
+    private static final String GENDER = "^[A-Z](.+|)$";
+
     public static boolean checkServiceName(String serviceName){
         return serviceName.matches(SERVICE_NAME);
     }
@@ -29,7 +32,6 @@ public class Regex {
     public static boolean checkName(String name) {
         return name.matches(NAME);
     }
-
 
     public static boolean checkEmail(String email) {
         return email.matches(EMAIL);
@@ -55,4 +57,11 @@ public class Regex {
         return passPort.matches(PASS_PORT);
     }
 
+    public static boolean checkIDBooking(String id) {
+        return id.matches(ID_BOOKING);
+    }
+
+    public static boolean checkGender(String gender) {
+        return gender.matches(GENDER);
+    }
 }

@@ -1,10 +1,14 @@
 package case_study.controller;
 
 import case_study.common.ChoiceException;
+import case_study.service.IBookingService;
+import case_study.service.impl.BookingService;
 
 import java.util.Scanner;
 
 public class BookingController {
+    private static IBookingService bookingService = new BookingService();
+
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
@@ -20,9 +24,10 @@ public class BookingController {
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
-                    case 1://add new booking
+                    case 1:
+                        bookingService.create();
                         break;
-                    case 2://display list booking
+                    case 2:bookingService.display();
                         break;
                     case 3://create new contracts
                         break;

@@ -25,10 +25,14 @@ public class EmployeeRepository implements IEmployeeRepository {
 
         employeeList.clear();
         String[] info;
-        for (String str : list) {
-            info = str.split(",");
-            employeeList.add(new Employee(info[0], info[1], info[2], info[3],
-                    info[4], info[5], info[6], info[7], info[8], Long.parseLong(info[9])));
+        try {
+            for (String str : list) {
+                info = str.split(",");
+                employeeList.add(new Employee(info[0], info[1], info[2], info[3],
+                        info[4], info[5], info[6], info[7], info[8], Long.parseLong(info[9])));
+            }
+        }catch (NullPointerException nullPointerException){
+
         }
         return employeeList;
     }
@@ -109,10 +113,14 @@ public class EmployeeRepository implements IEmployeeRepository {
     public Employee getById(String checkId) {
         employeeList = getAll();
 
-        for (Employee employee : employeeList) {
-            if (employee.getId().equals(checkId)) {
-                return employee;
+        try {
+            for (Employee employee : employeeList) {
+                if (employee.getId().equals(checkId)) {
+                    return employee;
+                }
             }
+        } catch (NullPointerException nullPointerException) {
+
         }
         return null;
     }

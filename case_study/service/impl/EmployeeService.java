@@ -1,7 +1,6 @@
 package case_study.service.impl;
 
-import case_study.common.InfoInput;
-import case_study.common.ChoiceException;
+import case_study.common.InfoInputPerson;
 import case_study.common.Regex;
 import case_study.model.impl_person.impl.Employee;
 import case_study.repository.IEmployeeRepository;
@@ -128,23 +127,23 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public String enterInfo(String checkID) {
-        String name = InfoInput.enterName();
+        String name = InfoInputPerson.enterName();
 
-        String dateOFBirth = InfoInput.enterDateOfBirth();
+        String dateOFBirth = InfoInputPerson.enterDateOfBirth();
 
-        String gender = InfoInput.enterGender();
+        String gender = InfoInputPerson.enterGender();
 
-        String passPort = InfoInput.enterPassPort();
+        String passPort = InfoInputPerson.enterPassPort();
 
-        String numberPhone = InfoInput.enterNumberPhone();
+        String numberPhone = InfoInputPerson.enterNumberPhone();
 
-        String email = InfoInput.enterEmail();
+        String email = InfoInputPerson.enterEmail();
 
-        String level = InfoInput.enterLevel();
+        String level = InfoInputPerson.enterLevel();
 
-        String position = InfoInput.enterPosition();
+        String position = InfoInputPerson.enterPosition();
 
-        long wage = InfoInput.enterWage();
+        long wage = InfoInputPerson.enterWage();
 
         String employee = checkID + "," + name + "," + dateOFBirth + "," + gender + "," +
                 passPort + "," + numberPhone + "," + email + "," + level + "," + position + "," + wage;

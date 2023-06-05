@@ -15,6 +15,30 @@ public class Villa extends Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
+    public String getStandardVilla() {
+        return standardVilla;
+    }
+
+    public void setStandardVilla(String standardVilla) {
+        this.standardVilla = standardVilla;
+    }
+
+    public float getAreaOfSwimmingPool() {
+        return areaOfSwimmingPool;
+    }
+
+    public void setAreaOfSwimmingPool(float areaOfSwimmingPool) {
+        this.areaOfSwimmingPool = areaOfSwimmingPool;
+    }
+
+    public int getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
     @Override
     public String toString() {
         return "Villa{" + super.toString() +
