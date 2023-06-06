@@ -18,8 +18,10 @@ public class FacilityRepository implements IFacilityRepository {
     private static List<Villa> villaList = new ArrayList<>();
     private static List<House> houseList = new ArrayList<>();
     private static List<Room> roomList = new ArrayList<>();
-    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private static List<Facility> facilityList = new ArrayList<>();
 
+    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private static List<Facility> maintenanceList = new ArrayList<>();
     private static List<String> stringList = new ArrayList<>();
 
     {
@@ -38,7 +40,7 @@ public class FacilityRepository implements IFacilityRepository {
         }
         houseList = getHouseList();
         for (House house : houseList) {
-            facilityIntegerMap.put(house, 0);
+            facilityIntegerMap.put(house, 4);
         }
         roomList = getRooomList();
         for (Room room : roomList) {
@@ -49,8 +51,15 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public Facility getById(String id) {
-        List<Facility> facilityList = getAll();
-        for (Facility facility : facilityList) {
+//        List<Facility> facilityList = getAll();
+//        for (Facility facility : facilityList) {
+//            if (facility.getServiceCode().equals(id)) {
+//                return facility;
+//            }
+//        }
+//        return null;
+        Set<Facility> keySet = facilityIntegerMap.keySet();
+        for (Facility facility : keySet) {
             if (facility.getServiceCode().equals(id)) {
                 return facility;
             }
@@ -60,7 +69,6 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public List<Facility> getAll() {
-        List<Facility> facilityList = new ArrayList<>();
         villaList = getVillaList();
         houseList = getHouseList();
         roomList = getRooomList();
@@ -263,17 +271,36 @@ public class FacilityRepository implements IFacilityRepository {
         Set<Facility> keySet = facilityIntegerMap.keySet();
         int count = 0;
         for (Facility key : keySet) {
-            if(key.equals(facility)){
+            if (key.equals(facility)) {
                 count = facilityIntegerMap.get(key);
                 break;
             }
         }
         count++;
-        facilityIntegerMap.replace(facility,count);
-        if(count == 5){
-
+        facilityIntegerMap.replace(facility, count);
+        if (count == 5) {
+            facilityIntegerMap.remove(facility);
+            maintenanceList.add(facility);
         }
     }
+
+    @Override
+    public List<Facility> getMaintenanceList() {
+        return maintenanceList;
+    }
+
+    @Override
+    public void clearMaintenanceAndPutMap() {
+        if (maintenanceList.size() == 0) {
+            System.out.println("Maintenance list is empty!");
+        } else {
+            for (Facility facility : maintenanceList) {
+                facilityIntegerMap.put(facility, 0);
+            }
+            maintenanceList.clear();
+        }
+    }
+
 }
 
 

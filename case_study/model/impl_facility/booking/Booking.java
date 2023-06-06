@@ -11,6 +11,9 @@ public class Booking {
     private String customerId;
     private String facilityId;
 
+    public Booking() {
+    }
+
     public Booking(String bookingId, String bookingDay, String rentalStartDay,
                    String rentalEndDay, String customerId, String facilityId) {
         this.bookingId = bookingId;

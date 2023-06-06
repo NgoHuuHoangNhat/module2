@@ -5,24 +5,5 @@ import case_study.repository.IContractRepository;
 
 import java.util.List;
 
-public class PromotionRepository implements IContractRepository {
-
-
-    @Override
-    public Contract getById(String checkId) {
-        return null;
-    }
-
-    @Override
-    public List getAll() {
-        return null;
-    }
-
-    @Override
-    public void add(String obj) {
-
-    }
-
-
-
+public class PromotionRepository{
 }

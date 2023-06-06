@@ -7,8 +7,8 @@ import case_study.service.impl.FacilityService;
 import java.util.Scanner;
 
 public class FacilityController {
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final IFacilityService facilityService = new FacilityService();
+    private static  Scanner scanner = new Scanner(System.in);
+    private static IFacilityService facilityService = new FacilityService();
 
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
@@ -20,7 +20,8 @@ public class FacilityController {
                     "2. Add new facility\n" +
                     "3. Display list facility maintenance\n" +
                     "4. Remove list facility\n" +
-                    "5. Return main menu\n" +
+                    "5. Clear maintenance\n"+
+                    "6. Return main menu\n" +
                     "Option: ");
 
             try {
@@ -39,6 +40,9 @@ public class FacilityController {
                         facilityService.removeFacilityList();
                         break;
                     case 5:
+                        facilityService.clearMaintenance();
+                        break;
+                    case 6:
                         return;
                     default:
                         ChoiceException.choiceIsNotAvailable();

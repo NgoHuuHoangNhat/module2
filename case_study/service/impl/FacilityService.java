@@ -181,13 +181,21 @@ public class FacilityService implements IFacilityService {
     @Override
     public void displayMaintenance() {
         System.out.println("Facilities need maintenance");
-        Map<Facility, Integer> map = facilityRepository.getFacilityMap();
-        Set<Facility> keySet = map.keySet();
-        for (Facility key : keySet) {
-            if (map.get(key) >= 5) {
-                System.out.println("Facility needs maintenance: " + key);
+        List<Facility> facilityList = facilityRepository.getMaintenanceList();
+        if (facilityList.size() == 0) {
+            System.out.println("No facilities need maintenance!");
+        } else {
+            for (Facility facility : facilityList) {
+                System.out.println(facility);
             }
         }
+    }
+
+    @Override
+    public void clearMaintenance() {
+        facilityRepository.clearMaintenanceAndPutMap();
+        System.out.println("Maintenance list has been removed!");
+
     }
 
     private void removeRoom() {
@@ -213,7 +221,6 @@ public class FacilityService implements IFacilityService {
                     }
                 }
             }
-
         }
     }
 

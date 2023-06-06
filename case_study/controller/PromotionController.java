@@ -1,10 +1,13 @@
 package case_study.controller;
 
 import case_study.common.ChoiceException;
+import case_study.service.IBookingService;
+import case_study.service.impl.BookingService;
 
 import java.util.Scanner;
 
 public class PromotionController {
+    private static IBookingService bookingService = new BookingService();
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
@@ -19,7 +22,8 @@ public class PromotionController {
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
-                    case 1: //display list customers use service
+                    case 1:
+                        bookingService.displayListCustomerUseService();
                         break;
                     case 2:// display list customers get voucher
                         break;

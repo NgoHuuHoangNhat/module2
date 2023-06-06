@@ -14,8 +14,11 @@ import case_study.repository.impl.FacilityRepository;
 import case_study.service.IBookingService;
 import case_study.service.ICustomerService;
 import case_study.service.IFacilityService;
+import com.sun.scenario.effect.impl.prism.ps.PPSBlend_ADDPeer;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -30,6 +33,7 @@ public class BookingService implements IBookingService {
     @Override
     public void display() {
         Set<Booking> bookingSet = bookingRepository.getAll();
+
         for (Booking booking : bookingSet) {
             System.out.println(booking);
         }
@@ -37,10 +41,12 @@ public class BookingService implements IBookingService {
 
     @Override
     public void create() {
-        System.out.println("*****Customer List*****");
-        customerService.display();
-        System.out.println("*****Facility List*****");
-        facilityService.displayAllFacility();
+        System.out.println("*****Booking List*****");
+        Map<Facility, Integer> map = facilityRepository.getFacilityMap();
+        Set<Facility> keySet = map.keySet();
+        for (Facility facility : keySet) {
+            System.out.println(facility);
+        }
         while (true) {
             System.out.print("Enter booking id: ");
             String checkId = scanner.nextLine();
@@ -97,5 +103,22 @@ public class BookingService implements IBookingService {
             }
         }
     }
-}
+
+    @Override
+    public void displayListCustomerUseService() {
+        while (true) {
+            System.out.print("Enter year: ");
+            String year = scanner.nextLine();
+            if (!Regex.checkYear(year)) {
+                System.out.println("Year is wrong format, please re-input!");
+            } else if (Integer.parseInt(year) < 2010 || Integer.parseInt(year) > LocalDate.now().getYear()) {
+                System.out.println("Furama was born in 2010 and has been active until now, please enter the year in this time period!");
+            } else {
+                List<Customer> bookingList = bookingRepository.getCustomerBookingInYear(year);
+
+                }
+            }
+        }
+    }
+
 

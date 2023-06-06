@@ -7,6 +7,10 @@ public class Villa extends Facility {
     private float areaOfSwimmingPool;
     private int numberOfFloors;
 
+    public Villa(String serviceCode, String serviceName, float area, float rentalCosts, int maxNumberOfPeople, String rentalType) {
+        super(serviceCode, serviceName, area, rentalCosts, maxNumberOfPeople, rentalType);
+    }
+
     public Villa(String serviceCode, String serviceName, float area, float rentalCosts,
                  int maxNumberOfPeople, String rentalType, String standardVilla, float areaOfSwimmingPool, int numberOfFloors) {
         super(serviceCode, serviceName, area, rentalCosts, maxNumberOfPeople, rentalType);

@@ -35,7 +35,7 @@ public class InfoInputBooking {
                     Date bookingDate = simpleDateFormat.parse(bookingDay);
                     Date rentalStartDate = simpleDateFormat.parse(rentalStartDay);
 
-                    if (bookingDate.compareTo(rentalStartDate) < 0) {
+                    if (rentalStartDate.compareTo(bookingDate) < 0) {
                         System.out.println("The rental start time must be after the booking time!");
                     } else {
                         return rentalStartDay;

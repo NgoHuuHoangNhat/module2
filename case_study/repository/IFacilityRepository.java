@@ -10,6 +10,7 @@ import java.util.Map;
 
 public interface IFacilityRepository {
     Facility getById(String id);
+
     List<Facility> getAll();
 
     List<Villa> getVillaList();
@@ -39,4 +40,8 @@ public interface IFacilityRepository {
     Map<Facility, Integer> getFacilityMap();
 
     void valueAddOne(Facility facility);
+
+    List<Facility> getMaintenanceList();
+
+    void clearMaintenanceAndPutMap();
 }

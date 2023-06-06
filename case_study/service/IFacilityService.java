@@ -12,4 +12,6 @@ public interface IFacilityService  {
     void removeFacilityList();
 
     void displayMaintenance();
+
+    void clearMaintenance();
 }

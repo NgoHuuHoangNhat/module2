@@ -13,8 +13,10 @@ public class Regex {
     private static final String ID_ROOM = "^SVRO\\-\\d{4}$";
     private static final String ID_HOUSE = "^SVHO\\-\\d{4}$";
     private static final String ID_BOOKING = "^BK\\-\\d{4}$";
+    private static final String ID_CONTRACT = "^CT\\-\\d{4}$";
     private static final String SERVICE_NAME = "^[A-Z](.+|)$";
     private static final String GENDER = "^[A-Z](.+|)$";
+    private static final String YEAR = "^\\d{4}$";
 
     public static boolean checkServiceName(String serviceName){
         return serviceName.matches(SERVICE_NAME);
@@ -63,5 +65,13 @@ public class Regex {
 
     public static boolean checkGender(String gender) {
         return gender.matches(GENDER);
+    }
+
+    public static boolean checkIDContract(String contractId) {
+        return contractId.matches(ID_CONTRACT);
+    }
+
+    public static boolean checkYear(String year) {
+        return year.matches(YEAR);
     }
 }
