@@ -25,7 +25,7 @@ public class PromotionController {
                     case 1:
                         bookingService.displayListCustomerUseService();
                         break;
-                    case 2:// display list customers get voucher
+                    case 2:bookingService.displayListCustomerGetVoucher();
                         break;
                     case 3:
                         return;

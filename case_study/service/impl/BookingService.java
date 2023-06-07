@@ -1,5 +1,6 @@
 package case_study.service.impl;
 
+import case_study.common.ChoiceException;
 import case_study.common.InfoInputBooking;
 import case_study.common.Regex;
 import case_study.model.impl_facility.Facility;
@@ -17,10 +18,7 @@ import case_study.service.IFacilityService;
 import com.sun.scenario.effect.impl.prism.ps.PPSBlend_ADDPeer;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class BookingService implements IBookingService {
     private static Scanner scanner = new Scanner(System.in);
@@ -114,11 +112,75 @@ public class BookingService implements IBookingService {
             } else if (Integer.parseInt(year) < 2010 || Integer.parseInt(year) > LocalDate.now().getYear()) {
                 System.out.println("Furama was born in 2010 and has been active until now, please enter the year in this time period!");
             } else {
-                List<Customer> bookingList = bookingRepository.getCustomerBookingInYear(year);
+                List<Customer> customerBookingInYearList = bookingRepository.getCustomerBookingInYear(year);
 
+                try {
+                    for (Customer customer : customerBookingInYearList) {
+                        System.out.println(customer);
+                    }
+                    break;
+                } catch (NullPointerException nullPointerException) {
+                    System.out.println("No customer orders this year!");
                 }
             }
         }
     }
+
+    @Override
+    public void displayListCustomerGetVoucher() {
+        Stack<Customer> customerListUsedVillaAndHouse = bookingRepository.getCustomerBookingInCurrentYear();
+        int numberOfVoucherTenPercent = 0;
+        int numberOfVoucherTwelvePercent = 0;
+        int numberOfVoucherFiftyPercent = 0;
+        if (customerListUsedVillaAndHouse == null) {
+            System.out.println("No customer orders villa and house this year!");
+            return;
+        }
+        do {
+            System.out.println("Enter numbers of voucher, The total number of vouchers must be equal to " + customerListUsedVillaAndHouse.size());
+
+            System.out.println("---Voucher 10%---");
+            numberOfVoucherTenPercent = enterNumberOfVoucher();
+
+            System.out.println("---Voucher 20%---");
+            numberOfVoucherTwelvePercent = enterNumberOfVoucher();
+
+            System.out.println("---Voucher 50%---");
+            numberOfVoucherFiftyPercent = enterNumberOfVoucher();
+
+            if (numberOfVoucherFiftyPercent + numberOfVoucherTenPercent +
+                    numberOfVoucherTwelvePercent != customerListUsedVillaAndHouse.size()) {
+                System.out.println("The total number of vouchers must be equal to " + customerListUsedVillaAndHouse.size());
+            } else {
+                break;
+            }
+        } while (true);
+
+        while (customerListUsedVillaAndHouse.size() > 0) {
+            if (numberOfVoucherFiftyPercent != 0) {
+                System.out.println(customerListUsedVillaAndHouse.pop() + " voucher 50%");
+                numberOfVoucherFiftyPercent--;
+            } else if (numberOfVoucherTwelvePercent != 0) {
+                System.out.println(customerListUsedVillaAndHouse.pop() + " voucher 20%");
+                numberOfVoucherTwelvePercent--;
+            } else {
+                System.out.println(customerListUsedVillaAndHouse.pop() + "voucher 10%");
+            }
+        }
+    }
+
+    public int enterNumberOfVoucher() {
+        int numberOfVoucher = 0;
+        do {
+            System.out.print("Enter numbers of voucher: ");
+            numberOfVoucher = Integer.parseInt(scanner.nextLine());
+            if (numberOfVoucher < 0 || numberOfVoucher > 10) {
+                System.out.println("Number of vouchers cannot be less than 0 and greater than 10, please re-input!");
+            } else {
+                return numberOfVoucher;
+            }
+        } while (true);
+    }
+}
 
 

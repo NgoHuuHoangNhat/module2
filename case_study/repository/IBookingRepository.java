@@ -5,6 +5,7 @@ import case_study.model.impl_person.impl.Customer;
 
 import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 public interface IBookingRepository{
     Set<Booking> getAll();
@@ -14,4 +15,6 @@ public interface IBookingRepository{
     void add(Booking newBooking);
 
     List<Customer> getCustomerBookingInYear(String year);
+
+    Stack<Customer> getCustomerBookingInCurrentYear();
 }
