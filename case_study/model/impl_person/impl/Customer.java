@@ -8,7 +8,6 @@ import java.awt.event.PaintEvent;
 public class Customer extends Person {
     private String typeOfGuest;
     private String address;
-
     public Customer(String id, String name, String dateOfBirth, String gender,
                     String passport, String numberPhone, String email, String typeOfGuest, String address) {
         super(id, name, dateOfBirth, gender, passport, numberPhone, email);

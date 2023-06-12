@@ -40,4 +40,6 @@ public class House extends Facility {
                 ", numberOfFloors= " + numberOfFloors +
                 '}';
     }
+
+
 }
